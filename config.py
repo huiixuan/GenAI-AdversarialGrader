@@ -12,9 +12,9 @@ OLLAMA_HOST = "http://localhost:11434"
 OLLAMA_TIMEOUT = 300
 NUM_CTX = 8192
 
-SOLVER_MODEL = "llama3.1:8b"   # use a cheap solver so it makes errors
+SOLVER_MODEL = "llama3.2:3b"
 SOLVER_TEMP = 0.7 
-MAX_TOKENS = 2048
+MAX_TOKENS = 1024
 WORKERS = 8
 
 PILOT_K = 5
