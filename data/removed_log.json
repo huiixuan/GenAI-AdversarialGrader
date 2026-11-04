@@ -1,0 +1,5046 @@
+[
+  {
+    "id": "math_3",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_6",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_10",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_14",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_25",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_26",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_36",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_39",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_40",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_45",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_48",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_49",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_50",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_56",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_61",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_67",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_68",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_94",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_98",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_103",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_106",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_110",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_117",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_119",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_121",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_122",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_133",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_138",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_147",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_164",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_168",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_169",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_175",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_184",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_186",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_189",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_195",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_221",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_222",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_243",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_256",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_267",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_268",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_289",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_293",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_296",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_306",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_308",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_309",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_323",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_331",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_343",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_347",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_367",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_375",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_376",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_378",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_383",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_394",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_400",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_405",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_408",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_410",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_412",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_429",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_437",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_444",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_453",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_455",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_467",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_469",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_491",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_493",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_501",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_503",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_504",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_505",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_508",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_514",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_515",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_526",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_553",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_565",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_566",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_574",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_576",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_589",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_595",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_600",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_604",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_609",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_612",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_615",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_650",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_652",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_655",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_659",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_669",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_681",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_688",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_689",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_690",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_696",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_708",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_709",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_714",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_717",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_723",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_751",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_774",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_777",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_783",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_788",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_789",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_792",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_793",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_797",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_798",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_805",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_807",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_808",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_809",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_819",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_821",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_834",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_846",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_847",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_852",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_855",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_862",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_865",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_883",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_892",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_894",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_898",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_899",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_939",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_944",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_948",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_949",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_950",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_958",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_961",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_968",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_969",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_981",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_989",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_990",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_998",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1003",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1009",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1025",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1028",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1029",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1032",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1035",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1052",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1063",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1071",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1086",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1089",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1108",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1114",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1121",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1124",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1125",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1129",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1131",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1134",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1137",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1152",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1158",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1161",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1164",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1169",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1178",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1183",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1218",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1229",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1236",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1241",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1244",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1252",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1261",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1270",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1281",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1288",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1289",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1290",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1297",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1308",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1309",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1313",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1315",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1321",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1338",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1339",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1341",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1356",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1357",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1381",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1383",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1405",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1406",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1448",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1463",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1489",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1490",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1493",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1495",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1509",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1511",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1514",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1515",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1540",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1549",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1556",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1557",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1559",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1562",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1577",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1589",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1590",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1593",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1598",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1604",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1611",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1614",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1621",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1631",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1645",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1650",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1655",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1661",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1662",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1663",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1665",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1666",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1667",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1668",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1669",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1670",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1671",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1672",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1673",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1674",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1679",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1680",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1681",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1686",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1687",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1688",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1691",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1692",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1693",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1695",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1696",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1697",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1699",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1700",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1701",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1702",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1703",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1704",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1707",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1708",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1709",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1711",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1714",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1715",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1717",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1718",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1719",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1720",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1721",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1722",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1723",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1724",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1725",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1726",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1727",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1729",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1731",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1733",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1735",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1736",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1738",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1740",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1741",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1743",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1744",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1745",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1746",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1747",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1748",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1749",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1750",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1751",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1755",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1756",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1757",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1759",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1760",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1762",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1765",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1766",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1769",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1770",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1771",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1774",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1776",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1779",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1781",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1782",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1783",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1786",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1787",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1789",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1790",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1792",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1795",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1796",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1798",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1799",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1800",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1801",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1802",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1803",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1804",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1812",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1816",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1817",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1818",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1820",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1822",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1823",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1824",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1825",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1831",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1832",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1833",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1835",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1836",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1837",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1838",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1841",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1843",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1844",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1847",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1848",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1851",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1855",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1856",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1860",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1861",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1862",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1863",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1864",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1865",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1866",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1867",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1869",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1870",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1871",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1872",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1873",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1875",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1876",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1880",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1881",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1883",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1884",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1891",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1893",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1894",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1896",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1897",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1898",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1899",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1900",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1901",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1902",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1903",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1904",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1907",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1912",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1913",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1914",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1915",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1916",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1919",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1920",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1922",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1925",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1926",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1929",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1930",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1931",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1932",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1933",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1934",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1935",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1936",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1937",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1939",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1943",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1947",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1949",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1950",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1951",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1953",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1956",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1957",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1959",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1964",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1965",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1969",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1971",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1972",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1973",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1975",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1977",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1979",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1981",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1982",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1983",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1984",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1987",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1991",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1993",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1994",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1995",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_1996",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_1999",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2000",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2001",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2002",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2003",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2004",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2005",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2006",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2007",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2012",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2017",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2021",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2025",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2027",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2029",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2031",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2032",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2033",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2034",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2035",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2036",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2038",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2039",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2041",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2042",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2043",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2044",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2046",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2048",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2049",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2050",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2052",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2054",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2055",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2057",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2058",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2060",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2062",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2063",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2065",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2067",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2069",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2071",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2074",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2078",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2079",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2080",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2083",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2084",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2085",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2087",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2089",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2091",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2092",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2094",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2095",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2096",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2097",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2099",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2101",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2102",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2105",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2106",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2109",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2110",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2111",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2112",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2113",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2114",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2115",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2116",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2121",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2123",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2124",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2126",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2127",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2128",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2130",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2131",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2132",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2133",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2136",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2137",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2139",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2140",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2141",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2152",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2155",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2157",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2158",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2159",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2161",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2163",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2164",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2165",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2166",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2169",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2170",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2171",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2173",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2175",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2176",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2180",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2184",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2185",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2188",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2189",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2191",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2192",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2193",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2195",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2201",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2204",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2207",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2212",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2216",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2225",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2228",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2237",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2238",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2247",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2252",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2261",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2264",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2265",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2266",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2269",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2273",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2276",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2277",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2283",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2284",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2291",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2295",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2296",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2301",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2305",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2306",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2310",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2311",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2313",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2315",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2319",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2323",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2326",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2330",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2333",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2352",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2353",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2355",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2358",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2360",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2362",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2363",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2364",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2366",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2368",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2378",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2385",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2387",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2391",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2392",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2394",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2400",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2409",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2412",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2415",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2419",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2420",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2421",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2423",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2424",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2425",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2426",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2427",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2428",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2435",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2437",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2443",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2447",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2456",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2458",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2461",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2465",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2466",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2470",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2474",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2477",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2478",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2481",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2484",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2496",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2498",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2501",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2505",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2509",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2515",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2520",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2521",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2528",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2530",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2531",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2536",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2541",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2542",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2548",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2551",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2561",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2563",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2567",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2573",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2578",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2580",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2589",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2592",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2595",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2597",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2599",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2602",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2604",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2605",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2606",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2607",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2608",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2609",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2610",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2611",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2612",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2617",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2618",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2620",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2622",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2625",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2630",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2638",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2648",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2651",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2653",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2657",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2658",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2660",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2662",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2663",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2665",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2672",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2678",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2684",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2689",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2690",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2691",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2693",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2694",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2696",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2704",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2716",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2718",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2736",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2739",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2742",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2745",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2746",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2751",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2755",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2757",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2761",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2763",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2783",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2787",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2797",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2798",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2803",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2810",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2812",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2814",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2815",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2816",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2821",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2824",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2828",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2834",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2836",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2840",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2843",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2847",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2848",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2850",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2851",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2853",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2854",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2860",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2870",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2873",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2875",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2882",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2886",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2890",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2891",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2893",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2894",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2895",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2896",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2899",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2902",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2907",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2912",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2914",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2922",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2923",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2931",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2936",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2938",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2942",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2944",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2948",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2951",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2954",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_2962",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2967",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2968",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2969",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2972",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2977",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2980",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2983",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2986",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_2999",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3000",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3001",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3004",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3006",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3011",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3012",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3014",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3015",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3016",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3017",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3019",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3025",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3027",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3028",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3029",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3031",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3032",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3033",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3034",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3036",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3038",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3040",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3078",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3087",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3092",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3094",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3097",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3118",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3123",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3128",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3139",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3143",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3152",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3158",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3159",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3165",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3194",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3201",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3206",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3209",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3217",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3229",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3248",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3255",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3296",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3299",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3300",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3310",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3317",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3338",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3342",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3364",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3366",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3370",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3371",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3374",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3395",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3404",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3436",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3441",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3448",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3511",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3515",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3519",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3526",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3557",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3567",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3577",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3586",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3587",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3589",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3591",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3596",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3600",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3602",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3604",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3605",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3610",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3628",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3632",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3638",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3641",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3647",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3653",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3655",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3680",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3683",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3689",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3695",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3700",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3702",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3704",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3706",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3707",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3714",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3716",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3728",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3734",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3737",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3751",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3753",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3756",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3758",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3762",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3769",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3770",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3773",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3774",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3776",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3782",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3783",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3785",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3798",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3800",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3801",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3803",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3806",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3807",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3808",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3814",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3815",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3823",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3839",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3849",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3850",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3851",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3854",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3855",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3868",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3873",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3877",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3879",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3881",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3893",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3901",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3909",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3913",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3924",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3926",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3931",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3936",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3955",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3969",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3971",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3980",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_3981",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3993",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3994",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_3995",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4000",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4012",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4014",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4016",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4027",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4028",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4033",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4037",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4038",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4040",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4045",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4059",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4070",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4081",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4083",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4091",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4100",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4101",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4104",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4111",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4112",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4117",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4120",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4123",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4126",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4128",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4129",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4131",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4134",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4142",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4145",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4146",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4151",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4156",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4158",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4160",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4164",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4166",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4173",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4178",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4183",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4188",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4190",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4192",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4196",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4202",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4203",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4204",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4209",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4212",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4226",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4228",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4234",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4244",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4254",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4258",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4265",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4269",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4279",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4284",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4294",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4306",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4314",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4316",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4326",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4330",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4349",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4350",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4351",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4357",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4362",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4379",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4383",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4384",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4388",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4389",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4394",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4403",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4404",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4405",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4413",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4420",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4427",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4436",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4446",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4456",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4459",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4460",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4461",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4462",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4464",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4466",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4467",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4468",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4469",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4471",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4472",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4474",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4475",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4476",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4477",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4478",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4479",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4481",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4482",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4491",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4497",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4500",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4501",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4502",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4503",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4505",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4506",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4508",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4510",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4515",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4516",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4518",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4521",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4522",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4525",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4527",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4530",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4531",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4533",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4534",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4536",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4537",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4539",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4546",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4547",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4548",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4551",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4552",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4553",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4555",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4563",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4564",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4567",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4570",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4574",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4575",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4576",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4578",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4579",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4580",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4582",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4583",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4584",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4586",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4587",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4588",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4589",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4591",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4593",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4596",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4597",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4598",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4600",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4601",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4602",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4604",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4608",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4610",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4611",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4613",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4618",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4624",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4628",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4629",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4631",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4637",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4638",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4641",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4645",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4646",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4650",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4651",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4653",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4655",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4657",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4658",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4659",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4661",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4662",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4665",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4666",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4667",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4669",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4670",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4672",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4675",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4676",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4677",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4679",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4682",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4683",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4686",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4691",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4692",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4693",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4694",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4695",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4696",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4697",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4700",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4703",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4704",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4705",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4707",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4708",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4710",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4712",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4713",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4715",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4718",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4719",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4721",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4723",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4724",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4727",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4730",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4731",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4737",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4738",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4739",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4742",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4745",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4746",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4748",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4756",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4758",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4760",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4762",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4765",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4766",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4769",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4771",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4773",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4776",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4777",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4778",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4779",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4780",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4781",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4785",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4786",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4788",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4789",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4790",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4792",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4793",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4794",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4796",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4797",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4798",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4799",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4802",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4805",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4807",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4808",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4809",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4810",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4811",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4813",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4824",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4825",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4830",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4832",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4834",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4835",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4837",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4838",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4839",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4840",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4842",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4849",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4850",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4853",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4855",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4856",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4860",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4862",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4864",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4866",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4867",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4868",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4870",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4871",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4872",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4873",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4874",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4876",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4883",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4884",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4886",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4887",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4888",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4890",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4891",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4895",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4896",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4898",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4900",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4901",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4903",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4905",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4906",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4912",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4914",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4916",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4917",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4918",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4919",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4921",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4922",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4923",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4924",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4928",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4932",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4933",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4935",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4937",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4938",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4939",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4943",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4946",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4947",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4949",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4954",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4955",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4957",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4964",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4966",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4968",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4972",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4973",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4974",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4978",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4980",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4981",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4985",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4986",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4988",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4991",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4993",
+    "reason": "diagram ([asy])"
+  },
+  {
+    "id": "math_4996",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "math_4999",
+    "reason": "non-numeric gold"
+  },
+  {
+    "id": "gsm_454",
+    "reason": "bad gold label / ambiguous (manual review)"
+  },
+  {
+    "id": "math_2930",
+    "reason": "bad gold label / ambiguous (manual review)"
+  },
+  {
+    "id": "math_644",
+    "reason": "bad gold label / ambiguous (manual review)"
+  },
+  {
+    "id": "math_4559",
+    "reason": "bad gold label / ambiguous (manual review)"
+  },
+  {
+    "id": "math_4619",
+    "reason": "bad gold label / ambiguous (manual review)"
+  }
+]
