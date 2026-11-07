@@ -50,11 +50,58 @@ The dataset files already exist. data/all.json contains 243 questions with pilot
 
 The tagged results/llm_cache.jsonl has 26 entries. Each entry is a cached model response with token counts and latency. It is not a full evaluation report; for example, the sample records show different attempts answering the same questions.
 
-What it doesn’t do yet
-Despite the repository name, the checked-in code doesn’t currently implement a full adversarial-grading/evaluation run. systems/baseline.py is empty, and there’s no script that runs a grader against the test set and reports evaluation metrics. The implemented workflow builds a dataset and uses a solver to characterize its questions.
+Systems
+-------
 
-To inspect the existing pilot summary without making model calls, run this from the repository root:
+System 4 — Adaptive Auditor (systems/adaptive_auditor.py)
+
+The adaptive auditor improves on a single-shot solver by only paying for a
+second "audit" call when the model’s own answers are inconsistent.
+
+Pipeline (per question):
+
+  1. SOLVE   — ask the model once with SOLVE_PROMPT
+  2. SAMPLE  — draw (SAMPLE_K - 1) more answers at solver temperature
+  3. RISK    — risk = 1 - (modal_count / SAMPLE_K)
+               0.0 = all samples agree  -> low risk, trust majority vote
+               1.0 = maximally split    -> high risk, send to auditor
+  4. AUDIT   — if risk >= RISK_THRESHOLD:
+               send question + modal answer to an auditor LLM (temp=0)
+               auditor checks the working and may override the answer
+  5. VERDICT — final answer = auditor answer (if triggered) else majority vote
+
+Tuning knobs (top of adaptive_auditor.py, tune on dev.json only):
+
+  SAMPLE_K         default 5    Total solver samples; higher = better risk signal, more cost
+  RISK_THRESHOLD   default 0.4  Audit when risk >= this; lower = more audits triggered
+  AUDIT_PROMPT                  The auditor instruction; edit wording to improve accuracy
+
+Metrics reported:
+  - Overall accuracy and audit trigger rate
+  - Accuracy broken down by tag (seeded_error, consistent_correct, always_wrong)
+  - Auditor targeting: precision and recall against seeded_error, measuring
+    whether the risk signal correctly routes adversarial questions to the auditor
+
+Running:
+
+  # Tune on dev -- run as many times as you like
+  python3 systems/adaptive_auditor.py --split dev
+
+  # Final reported result -- run ONCE only, do not tune after seeing this
+  python3 systems/adaptive_auditor.py --split test --run-id adaptive_test_final
+
+Results are saved to results/:
+  <run_id>_metrics.json    aggregate metrics
+  <run_id>_results.json    per-question predictions, risk scores, audit flags
+
+Why adaptive?
+seeded_error questions are inconsistent by construction (pilot pass rate 0.2-0.8),
+so they naturally produce higher risk scores. The auditor therefore fires
+preferentially on adversarial cases, giving better accuracy than a plain solver
+at lower cost than an always-on second pass.
 
 
-For a new pilot run, you’ll also need the Python ollama client and an Ollama server running locally with the configured model available. The README.md currently doesn’t document these steps.
+Other systems
+-------------
 
+systems/baseline.py — single-shot solver, no checking (in progress).
