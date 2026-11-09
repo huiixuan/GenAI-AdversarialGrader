@@ -5,9 +5,9 @@ Stage 2: pilot tagging. Calls the local Ollama model set in config.SOLVER_MODEL
 
 Run from the project root, AFTER scripts.prepare_data:
     ollama serve & ollama pull llama3.1:8b
-    python -m scripts.pilot_tagging --limit 50      # cheap trial: check accuracy first
-    python -m scripts.pilot_tagging                 # full run on every question
-    python -m scripts.pilot_tagging --summary       # just print the summary, no calls
+    python -m scripts.pilot_tag --limit 50      # cheap trial: check accuracy first
+    python -m scripts.pilot_tag                 # full run on every question
+    python -m scripts.pilot_tag --summary       # just print the summary, no calls
 
 After the full run, read data/review_always_wrong.json, list the ids with wrong
 gold labels or ambiguous wording in a text file (one id per line), then:
