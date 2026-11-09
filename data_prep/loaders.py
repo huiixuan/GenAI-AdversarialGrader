@@ -16,9 +16,14 @@ def load_gsm8k(removed):
     if not is_numeric_gold(gold):
       removed.append({"id": f"gsm_{i}", "reason": "non-numeric gold"})
       continue
-    items.append({"id": f"gsm_{i}", "source": "GSM8K", "level": None,
-                  "subject": "grade-school", "question": row["question"],
-                  "gold": gold})
+    items.append({
+      "id": f"gsm_{i}", 
+      "source": "GSM8K", 
+      "level": None,
+      "subject": "grade-school", 
+      "question": row["question"],
+      "gold": gold
+    })
   return items
 
 
