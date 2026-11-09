@@ -53,6 +53,120 @@ The tagged results/llm_cache.jsonl has 26 entries. Each entry is a cached model 
 Systems
 -------
 
+System 1 — Baseline (systems/baseline.py)
+
+The baseline is one LLM call. It solves the question with SOLVE_PROMPT and returns
+that answer. initial_answer and final_answer are the same parsed answer.
+
+The call uses the same prompt, temperature, and tag ("solve") as every other
+system's first answer. On llama3.2:3b, which is config.SOLVER_MODEL, a shared
+--run-id reuses the cached first answer already stored for the other systems.
+Each other model is its own cache entry.
+
+Default models, all local through Ollama:
+
+  llama3.2:3b    solver in config.py
+  llama3.1:8b    auditor in config.py
+  qwen2.5:7b     a third open model
+
+Pull them once before the first run. The script does not download weights.
+If a model is missing, it stops and prints the pull command.
+
+  ollama pull llama3.2:3b
+  ollama pull llama3.1:8b
+  ollama pull qwen2.5:7b
+
+Running (from the project root):
+
+  # all three models on dev
+  python -m systems.baseline --split dev --run-id baseline_dev
+
+  # one model, or a short prefix of the shuffled dev split
+  python -m systems.baseline --split dev --run-id baseline_dev --models llama3.2:3b --limit 20
+
+  # reprint the report from saved results
+  python -m systems.baseline --report --split dev --run-id baseline_dev
+
+  # sealed test split — run ONCE only
+  python -m systems.baseline --split test --run-id baseline_test_final --final
+
+Pass a comma-separated list to --models to change the set. --report reads the
+same list, so name any custom model again when reprinting its results.
+
+A changed prompt, temperature, or model refuses to resume an existing file.
+Use a new --run-id after any of those changes. The test split needs --final.
+
+Results are saved to results/. A colon in a model name is written as a hyphen,
+so llama3.2:3b becomes llama3.2-3b:
+
+  <run_id>_<split>_baseline-<model>.jsonl           per-question answers and cost
+  <run_id>_<split>_baseline-<model>_metrics.json    accuracy, unparsed rate, cost
+
+Metrics reported:
+
+  - Overall accuracy and the share of answers with no parsable final line
+  - Accuracy by tag (seeded_error, consistent_correct, always_wrong)
+  - Mean calls, tokens, and latency per question
+  - A comparison table when more than one model was run
+
+
+System 2 — Self-reflection (systems/self_reflection.py)
+
+The same model answers, critiques that answer, and then revises it. There is
+no separate auditor and no tools.
+
+Pipeline (per question):
+
+  1. SOLVE    — one SOLVE_PROMPT call, the same first answer as the baseline
+  2. CRITIQUE — the same model reviews its own solution and names a specific mistake,
+                or says the solution is correct
+  3. REVISE   — the same model solves the problem again in light of that critique
+                and ends with a new ANSWER line
+
+All three calls use SOLVER_TEMP and the model selected for that run. The first
+call uses tag "solve", so it is the cached baseline answer when this system is
+run with the same --run-id. Critique and revision are extra calls. If the
+critique is empty, or the revision has no parsable answer, the first answer
+is kept.
+
+The default models are the same three as the baseline. Pull them once:
+
+  ollama pull llama3.2:3b
+  ollama pull llama3.1:8b
+  ollama pull qwen2.5:7b
+
+Running (from the project root):
+
+  # same run-id as the baseline, so the first answer is shared
+  python -m systems.baseline --split dev --run-id compare_dev
+  python -m systems.self_reflection --split dev --run-id compare_dev
+
+  # one model, or a short prefix of the shuffled dev split
+  python -m systems.self_reflection --split dev --run-id compare_dev --models llama3.2:3b --limit 20
+
+  # reprint the report from saved results
+  python -m systems.self_reflection --report --split dev --run-id compare_dev
+
+  # sealed test split — run ONCE only
+  python -m systems.self_reflection --split test --run-id reflect_test_final --final
+
+A changed prompt, temperature, or model refuses to resume an existing file.
+Use a new --run-id after any of those changes. The test split needs --final.
+
+Results are saved to results/. A colon in a model name is written as a hyphen:
+
+  <run_id>_<split>_self-reflection-<model>.jsonl           per-question answers, critique, cost
+  <run_id>_<split>_self-reflection-<model>_metrics.json    first vs final accuracy, cost
+
+Metrics reported:
+
+  - Accuracy of the first answer and of the revised answer
+  - How often the answer changed, how many wrong answers became right, and how many right answers became wrong
+  - The same counts by tag (seeded_error, consistent_correct, always_wrong)
+  - Mean calls, tokens, and latency per question
+  - A comparison table when more than one model was run
+
+
 System 4 — Adaptive Auditor (systems/adaptive_auditor.py)
 
 The adaptive auditor improves on a single-shot solver by only paying for a
@@ -99,9 +213,3 @@ seeded_error questions are inconsistent by construction (pilot pass rate 0.2-0.8
 so they naturally produce higher risk scores. The auditor therefore fires
 preferentially on adversarial cases, giving better accuracy than a plain solver
 at lower cost than an always-on second pass.
-
-
-Other systems
--------------
-
-systems/baseline.py — single-shot solver, no checking (in progress).

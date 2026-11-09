@@ -25,13 +25,16 @@ class Result:
   log: list = field(default_factory=list)     # every prompt/response, for debugging
 
 
-def solve_once(item, tracker, run_id):
-  """The solver's first answer. Same model, prompt, run_id and tag in every system, so within one
-  run_id all systems start from the SAME cached first answer for a given question.
+def solve_once(item, tracker, run_id, model=None):
+  """The solver's first answer. Same prompt, temperature, run_id and tag in every system.
+
+  model defaults to SOLVER_MODEL, so within one run_id every system starts from the SAME cached
+  first answer for a given question. Another model keeps that prompt and tag; the cache key
+  includes the model name, so each model has its own entry.
   Returns (response_text, parsed_answer)."""
   messages = [{"role": "user", "content": SOLVE_PROMPT.format(q=item["question"])}]
-  text = call_llm(tracker, model=SOLVER_MODEL, messages=messages, temperature=SOLVER_TEMP,
-                  run_id=run_id, tag="solve")
+  text = call_llm(tracker, model=model or SOLVER_MODEL, messages=messages,
+                  temperature=SOLVER_TEMP, run_id=run_id, tag="solve")
   return text, extract_model_answer(text)
 
 

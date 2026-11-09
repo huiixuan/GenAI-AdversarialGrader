@@ -19,6 +19,31 @@ SOLVE_PROMPT = (
 
 
 # ==========================================================================
+# Self-reflection (system 2)
+# ==========================================================================
+# Follow-up turns in the same conversation. They do not interpolate the question:
+# it is already in the first user message, and problems contain LaTeX braces.
+# The format line stays last so a small model still ends on ANSWER.
+
+SELF_CRITIQUE_PROMPT = (
+    "Review the solution you just wrote. Check the problem statement, each step, "
+    "and the arithmetic. Name a specific mistake if there is one: a misread quantity, "
+    "an unjustified step, or a final answer that does not follow from the work. "
+    "If the solution is correct, say so plainly. Do not invent a flaw.\n\n"
+    "Write a short critique only. Do not end with an ANSWER line."
+)
+
+SELF_REVISE_PROMPT = (
+    "Using your critique above, solve the original problem again. "
+    "Keep any step the critique did not fault. Correct a step the critique shows is wrong. "
+    "If the critique found no error, keep your original answer.\n\n"
+    "Keep your reasoning concise. Finish with a single final line in exactly this form, "
+    "with nothing after it:\n"
+    "ANSWER: <final answer only, as a number or simple fraction, no units>"
+)
+
+
+# ==========================================================================
 # Auditor (systems 3 and 4)
 # ==========================================================================
 # NOTE: these use .replace() on {placeholders}, never str.format(), because the text contains
