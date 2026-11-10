@@ -33,7 +33,7 @@ from dataclasses import asdict, dataclass
 # ── project root on path ──────────────────────────────────────────────────────
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
-from config import RESULTS_DIR, SOLVER_MODEL, SOLVER_TEMP, WORKERS
+from config import AUDITOR_MODEL, AUDITOR_TEMP, RESULTS_DIR, SOLVER_MODEL, SOLVER_TEMP, WORKERS
 from grading import extract_model_answer, is_correct
 from llm import Tracker, call_llm, check_ready
 from prompts import SOLVE_PROMPT
@@ -111,16 +111,16 @@ def _compute_risk(answers: list[str | None]) -> tuple[str | None, float]:
 
 def _audit(tracker: Tracker, question: str, answer: str | None,
            run_id: str, q_id: str) -> str | None:
-    """Ask the auditor to verify (or correct) the given answer."""
+    """Ask the auditor (stronger model) to verify (or correct) the given answer."""
     answer_str = str(answer) if answer is not None else "unable to determine"
     response = call_llm(
         tracker,
-        model=SOLVER_MODEL,
+        model=AUDITOR_MODEL,       # stronger model than the solver
         messages=[{"role": "user", "content": AUDIT_PROMPT.format(
             question=question,
             answer=answer_str,
         )}],
-        temperature=0.0,   # auditor is deterministic
+        temperature=AUDITOR_TEMP,  # low but not zero, from config
         run_id=run_id,
         tag=f"audit_{q_id}",
     )
@@ -244,7 +244,8 @@ def compute_metrics(results: list[AuditResult]) -> dict:
         "config": {
             "sample_k": SAMPLE_K,
             "risk_threshold": RISK_THRESHOLD,
-            "model": SOLVER_MODEL,
+            "solver_model": SOLVER_MODEL,
+            "auditor_model": AUDITOR_MODEL,
         },
     }
 
@@ -256,7 +257,8 @@ def print_report(metrics: dict, run_id: str) -> None:
     print(f"  Adaptive Auditor — run_id: {run_id}")
     print(f"  SAMPLE_K={metrics['config']['sample_k']}  "
           f"RISK_THRESHOLD={metrics['config']['risk_threshold']}  "
-          f"model={metrics['config']['model']}")
+          f"solver={metrics['config']['solver_model']}  "
+          f"auditor={metrics['config']['auditor_model']}")
     print(f"{'='*60}")
     print(f"  Overall    n={ov['n']:4d}  acc={ov['accuracy']:.1%}  "
           f"audit_rate={ov['audit_rate']:.1%}  "
@@ -300,9 +302,11 @@ def main():
 
     print(f"Loaded {len(dataset)} questions from {args.split}.json")
     print(f"run_id={run_id!r}  SAMPLE_K={SAMPLE_K}  "
-          f"RISK_THRESHOLD={RISK_THRESHOLD}  model={SOLVER_MODEL}")
+          f"RISK_THRESHOLD={RISK_THRESHOLD}  "
+          f"solver={SOLVER_MODEL}  auditor={AUDITOR_MODEL}")
 
     check_ready(SOLVER_MODEL)
+    check_ready(AUDITOR_MODEL)
 
     results = run_eval(dataset, run_id=run_id, workers=args.workers)
     metrics = compute_metrics(results)
