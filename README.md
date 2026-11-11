@@ -1,215 +1,255 @@
 # GenAI-AdversarialGrader
 
-The Flow
-Hugging Face datasets
-        |
-        v
-scripts/prepare_data.py
-  - loads GSM8K and MATH
-  - filters out unsuitable questions and non-numeric answers
-  - removes duplicates
-  - samples questions and creates dev/test splits
-        |
-        v
-data/all.json  ------> data/dev.json
-        |               data/test.json
-        v
-scripts/pilot_tag.py  <---- local Ollama model (llama3.2:3b)
-  - asks the model to solve each question k times
-  - parses each response and checks it against the gold answer
-  - labels each question based on its pass rate
-        |
-        +----> results/llm_cache.jsonl
-        |        cached model responses and usage/latency metadata
-        |
-        +----> data/review_always_wrong.json
-        |        questions that the model got wrong every time, for review
-        v
-manually review questionable questions
-        |
-        v
-data/exclude_ids.txt ---> apply exclusions with --exclude
+This project compares four LLM-based systems for grading math answers, ranging
+from a single-shot solver to an adaptive auditor that only verifies answers when
+it detects uncertainty. All models run locally through Ollama — no external API
+or cost required.
 
+---
 
-The answer parser and checker live in grading.py; 
-model calls and caching are handled by llm.py. 
-The prompt used for solving is in prompts.py.
+## Quick Start
 
+**1. Install dependencies**
+```bash
+pip install -r requirements.txt
+```
 
-What the pilot tags mean
-For each question, the pilot makes five attempts by default. It compares each extracted answer with the gold answer, then assigns a tag:
+**2. Install Ollama and pull the models**
 
-consistent_correct: all attempts were correct.
-seeded_error: some attempts were correct and some wrong.
-always_wrong: all attempts were wrong; these are collected for manual review.
-The solver prompt asks for a final line like ANSWER: 42. The grader tries that format first, then uses fallbacks such as “the answer is …” or a final numeric line. Numeric answers are compared as exact fractions where possible, so equivalent forms like 1/2 and 0.5 match.
+Download Ollama from https://ollama.com/download, then:
+```bash
+ollama pull llama3.2:3b   # solver
+ollama pull llama3.1:8b   # auditor
+ollama pull qwen2.5:7b    # third model for comparison
+```
 
+**3. Run a system on the dev set**
+```bash
+# System 1 — Baseline
+python -m systems.baseline --split dev --run-id baseline_dev
 
-What’s already in this checkout
-The dataset files already exist. data/all.json contains 243 questions with pilot predictions and tags; data/dev.json has 73 and data/test.json has 170. The current tags are 81 consistent_correct, 105 seeded_error, and 57 always_wrong.
+# System 2 — Self-Reflection
+python -m systems.self_reflection --split dev --run-id compare_dev
 
-The tagged results/llm_cache.jsonl has 26 entries. Each entry is a cached model response with token counts and latency. It is not a full evaluation report; for example, the sample records show different attempts answering the same questions.
+# System 3 — Adversarial Grader
+python -m scripts.eval_adversarial --split dev --run-id adversarial_dev
 
-Systems
--------
+# System 4 — Adaptive Auditor
+python3 systems/adaptive_auditor.py --split dev
+```
 
-System 1 — Baseline (systems/baseline.py)
+Results are saved to `results/` automatically.
 
-The baseline is one LLM call. It solves the question with SOLVE_PROMPT and returns
-that answer. initial_answer and final_answer are the same parsed answer.
+> **Note:** `dev.json` is for development and tuning — run it as many times as
+> you like. `test.json` is sealed — run each system once only with a fixed
+> `--run-id`. Tuning after seeing test results invalidates the numbers.
 
-The call uses the same prompt, temperature, and tag ("solve") as every other
-system's first answer. On llama3.2:3b, which is config.SOLVER_MODEL, a shared
---run-id reuses the cached first answer already stored for the other systems.
-Each other model is its own cache entry.
+---
 
-Default models, all local through Ollama:
+## Repository Layout
 
-  llama3.2:3b    solver in config.py
-  llama3.1:8b    auditor in config.py
-  qwen2.5:7b     a third open model
+```
+data/               Question sets with pilot tags
+  all.json            243 questions (full set)
+  dev.json             73 questions (30% — for tuning)
+  test.json           170 questions (70% — sealed, run once)
 
-Pull them once before the first run. The script does not download weights.
-If a model is missing, it stops and prints the pull command.
+systems/            One file per grading system
+  baseline.py         System 1
+  self_reflection.py  System 2
+  auditor.py          System 3 auditor logic
+  adversarial.py      System 3 pipeline
+  adaptive_auditor.py System 4
 
-  ollama pull llama3.2:3b
-  ollama pull llama3.1:8b
-  ollama pull qwen2.5:7b
+scripts/
+  prepare_data.py     Builds the dataset from Hugging Face
+  pilot_tag.py        Tags questions by solver pass rate
+  eval_adversarial.py Runs System 3 evaluation
 
-Running (from the project root):
+results/            Output from each run (created automatically)
 
-  # all three models on dev
-  python -m systems.baseline --split dev --run-id baseline_dev
+grading.py          Answer extraction and numeric equivalence checking
+llm.py              Ollama calls with caching and cost tracking
+prompts.py          All prompt strings in one place
+config.py           Model names, temperatures, thresholds
+tools.py            Calculator and Python tool used by the auditor
+```
 
-  # one model, or a short prefix of the shuffled dev split
-  python -m systems.baseline --split dev --run-id baseline_dev --models llama3.2:3b --limit 20
+---
 
-  # reprint the report from saved results
-  python -m systems.baseline --report --split dev --run-id baseline_dev
+## Dataset
 
-  # sealed test split — run ONCE only
-  python -m systems.baseline --split test --run-id baseline_test_final --final
+Questions come from two public benchmarks:
 
-Pass a comma-separated list to --models to change the set. --report reads the
-same list, so name any custom model again when reprinting its results.
+- **GSM8K** — grade-school word problems (99 questions)
+- **MATH** — competition math, levels 2–5, seven subjects (144 questions)
 
-A changed prompt, temperature, or model refuses to resume an existing file.
-Use a new --run-id after any of those changes. The test split needs --final.
+Only questions with numeric or simple-fraction answers are included. The dataset
+is already built and committed — you do not need to run the data preparation
+scripts unless you want to rebuild from scratch.
 
-Results are saved to results/. A colon in a model name is written as a hyphen,
-so llama3.2:3b becomes llama3.2-3b:
+Each question has a **pilot tag** assigned by running the solver five times and
+checking how often it gets the right answer:
 
-  <run_id>_<split>_baseline-<model>.jsonl           per-question answers and cost
-  <run_id>_<split>_baseline-<model>_metrics.json    accuracy, unparsed rate, cost
+| Tag | Meaning | Count |
+|---|---|---|
+| `consistent_correct` | Solver always correct | 81 |
+| `seeded_error` | Solver sometimes right, sometimes wrong | 105 |
+| `always_wrong` | Solver always wrong | 57 |
 
-Metrics reported:
+The `seeded_error` questions are the main target — these are where an auditor can
+actually make a difference. When reporting results, always report on the full set
+and the `seeded_error` subset separately.
 
-  - Overall accuracy and the share of answers with no parsable final line
-  - Accuracy by tag (seeded_error, consistent_correct, always_wrong)
-  - Mean calls, tokens, and latency per question
-  - A comparison table when more than one model was run
+---
 
+## System Architecture
 
-System 2 — Self-reflection (systems/self_reflection.py)
+All four systems start from the same first solver call. What differs is what
+happens after:
 
-The same model answers, critiques that answer, and then revises it. There is
-no separate auditor and no tools.
+```
+Question (dev.json / test.json)
+            │
+            ▼
+  ┌─────────────────────┐
+  │  Solver llama3.2:3b │  ← shared first call across all systems
+  │     SOLVE_PROMPT    │
+  └──────────┬──────────┘
+             │
+     ┌───────┴──────────────────────────────────┐
+     │               │              │            │
+System 1         System 2       System 3      System 4
+(Baseline)   (Self-Reflection) (Adversarial  (Adaptive
+     │               │            Grader)      Auditor)
+     │          Critique +            │             │
+     │          Revise (×1)    Blind Solve    Risk Score
+     │               │         + Audit        Routing
+     │               │         + Revise           │
+     ▼               ▼              ▼              ▼
+Final Answer   Final Answer   Final Answer   Final Answer
+```
 
-Pipeline (per question):
+**System 4 — Adaptive Auditor routing detail:**
 
-  1. SOLVE    — one SOLVE_PROMPT call, the same first answer as the baseline
-  2. CRITIQUE — the same model reviews its own solution and names a specific mistake,
-                or says the solution is correct
-  3. REVISE   — the same model solves the problem again in light of that critique
-                and ends with a new ANSWER line
+```
+Solver × 3  →  risk = 1 − (modal_count / total_samples)
+                   │
+        ┌──────────┼──────────┐
+      < 0.3     0.3–0.5     > 0.5
+     (low)   (borderline)  (high)
+        │          │          │
+     Trust    Solver × 2    Audit
+    majority  recompute    immediately
+      vote      risk
+        │          │          │
+        └──────────┴──────────┘
+                   │
+            risk ≥ 0.4?
+            │         │
+           Yes        No
+            │         │
+         Auditor    Majority
+        (8b, ×1)     vote
+            └────┬────┘
+                 ▼
+           Final Answer
+```
 
-All three calls use SOLVER_TEMP and the model selected for that run. The first
-call uses tag "solve", so it is the cached baseline answer when this system is
-run with the same --run-id. Critique and revision are extra calls. If the
-critique is empty, or the revision has no parsable answer, the first answer
-is kept.
+---
 
-The default models are the same three as the baseline. Pull them once:
+## Running Each System
 
-  ollama pull llama3.2:3b
-  ollama pull llama3.1:8b
-  ollama pull qwen2.5:7b
+### System 1 — Baseline
 
-Running (from the project root):
+One solver call per question, no verification.
 
-  # same run-id as the baseline, so the first answer is shared
-  python -m systems.baseline --split dev --run-id compare_dev
-  python -m systems.self_reflection --split dev --run-id compare_dev
+```bash
+# Dev (run freely)
+python -m systems.baseline --split dev --run-id baseline_dev
 
-  # one model, or a short prefix of the shuffled dev split
-  python -m systems.self_reflection --split dev --run-id compare_dev --models llama3.2:3b --limit 20
+# Single model only
+python -m systems.baseline --split dev --run-id baseline_dev --models llama3.2:3b
 
-  # reprint the report from saved results
-  python -m systems.self_reflection --report --split dev --run-id compare_dev
+# Test (run ONCE only)
+python -m systems.baseline --split test --run-id baseline_test_final --final
+```
 
-  # sealed test split — run ONCE only
-  python -m systems.self_reflection --split test --run-id reflect_test_final --final
+### System 2 — Self-Reflection
 
-A changed prompt, temperature, or model refuses to resume an existing file.
-Use a new --run-id after any of those changes. The test split needs --final.
+Solver answers, critiques, then revises. Use the same `--run-id` as the baseline
+to reuse the cached first answer.
 
-Results are saved to results/. A colon in a model name is written as a hyphen:
+```bash
+# Dev
+python -m systems.baseline --split dev --run-id compare_dev
+python -m systems.self_reflection --split dev --run-id compare_dev
 
-  <run_id>_<split>_self-reflection-<model>.jsonl           per-question answers, critique, cost
-  <run_id>_<split>_self-reflection-<model>_metrics.json    first vs final accuracy, cost
+# Test (run ONCE only)
+python -m systems.self_reflection --split test --run-id reflect_test_final --final
+```
 
-Metrics reported:
+### System 3 — Adversarial Grader
 
-  - Accuracy of the first answer and of the revised answer
-  - How often the answer changed, how many wrong answers became right, and how many right answers became wrong
-  - The same counts by tag (seeded_error, consistent_correct, always_wrong)
-  - Mean calls, tokens, and latency per question
-  - A comparison table when more than one model was run
+An independent auditor (llama3.1:8b) solves the question blindly, then critiques
+the solver's answer. The solver revises if the answers disagree. The auditor can
+use a calculator or Python tool to verify calculations.
 
+```bash
+# Dev
+python -m scripts.eval_adversarial --split dev --run-id adversarial_dev
 
-System 4 — Adaptive Auditor (systems/adaptive_auditor.py)
+# Dev without tools (ablation)
+python -m scripts.eval_adversarial --split dev --run-id adversarial_dev_notools --no-tools
 
-The adaptive auditor improves on a single-shot solver by only paying for a
-second "audit" call when the model’s own answers are inconsistent.
+# Test (run ONCE only)
+python -m scripts.eval_adversarial --split test --run-id adversarial_test_final --final
+```
 
-Pipeline (per question):
+### System 4 — Adaptive Auditor
 
-  1. SOLVE   — ask the model once with SOLVE_PROMPT
-  2. SAMPLE  — draw (SAMPLE_K - 1) more answers at solver temperature
-  3. RISK    — risk = 1 - (modal_count / SAMPLE_K)
-               0.0 = all samples agree  -> low risk, trust majority vote
-               1.0 = maximally split    -> high risk, send to auditor
-  4. AUDIT   — if risk >= RISK_THRESHOLD:
-               send question + modal answer to an auditor LLM (temp=0)
-               auditor checks the working and may override the answer
-  5. VERDICT — final answer = auditor answer (if triggered) else majority vote
+Samples the solver multiple times, computes a risk score from answer disagreement,
+and only calls the auditor when risk is high enough to justify the cost.
 
-Tuning knobs (top of adaptive_auditor.py, tune on dev.json only):
+```bash
+# Dev (tune knobs here freely)
+python3 systems/adaptive_auditor.py --split dev
 
-  SAMPLE_K         default 5    Total solver samples; higher = better risk signal, more cost
-  RISK_THRESHOLD   default 0.4  Audit when risk >= this; lower = more audits triggered
-  AUDIT_PROMPT                  The auditor instruction; edit wording to improve accuracy
+# Test (run ONCE only)
+python3 systems/adaptive_auditor.py --split test --run-id adaptive_test_final
+```
 
-Metrics reported:
-  - Overall accuracy and audit trigger rate
-  - Accuracy broken down by tag (seeded_error, consistent_correct, always_wrong)
-  - Auditor targeting: precision and recall against seeded_error, measuring
-    whether the risk signal correctly routes adversarial questions to the auditor
+**Tuning knobs** — edit the top of `systems/adaptive_auditor.py`:
 
-Running:
+| Knob | Default | What it does |
+|---|---|---|
+| `SAMPLE_K_INITIAL` | 3 | Solver calls before first risk check |
+| `SAMPLE_K_EXTRA` | 2 | Extra calls for borderline risk zone |
+| `RISK_LOW` | 0.3 | Below this: trust and stop |
+| `RISK_HIGH` | 0.5 | Above this: audit immediately |
+| `RISK_THRESHOLD` | 0.4 | Audit trigger after full sample set |
 
-  # Tune on dev -- run as many times as you like
-  python3 systems/adaptive_auditor.py --split dev
+---
 
-  # Final reported result -- run ONCE only, do not tune after seeing this
-  python3 systems/adaptive_auditor.py --split test --run-id adaptive_test_final
+## Results
 
-Results are saved to results/:
-  <run_id>_metrics.json    aggregate metrics
-  <run_id>_results.json    per-question predictions, risk scores, audit flags
+All results are saved to `results/` after each run:
 
-Why adaptive?
-seeded_error questions are inconsistent by construction (pilot pass rate 0.2-0.8),
-so they naturally produce higher risk scores. The auditor therefore fires
-preferentially on adversarial cases, giving better accuracy than a plain solver
-at lower cost than an always-on second pass.
+| File | Contents |
+|---|---|
+| `<run_id>_<split>_baseline-<model>.jsonl` | Per-question answers, System 1 |
+| `<run_id>_<split>_self-reflection-<model>.jsonl` | Per-question answers, System 2 |
+| `<run_id>_metrics.json` | Aggregate metrics, System 4 |
+| `<run_id>_results.json` | Per-question results, System 4 |
+| `llm_cache.jsonl` | Cached LLM responses (shared across systems) |
+
+Re-running with the same `--run-id` reuses cached LLM responses. A changed
+prompt or model automatically creates a new cache entry.
+
+---
+
+## Answer Checking
+
+The grader (`grading.py`) looks for a final `ANSWER: <value>` line, then falls
+back to "the answer is …" or a standalone number. Numeric answers are compared
+as exact fractions, so `1/2` and `0.5` are treated as equal.

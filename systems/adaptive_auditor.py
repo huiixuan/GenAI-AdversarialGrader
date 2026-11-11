@@ -33,14 +33,18 @@ from dataclasses import asdict, dataclass
 # ── project root on path ──────────────────────────────────────────────────────
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
-from config import RESULTS_DIR, SOLVER_MODEL, SOLVER_TEMP, WORKERS
+from config import AUDITOR_MODEL, AUDITOR_TEMP, RESULTS_DIR, SOLVER_MODEL, SOLVER_TEMP, WORKERS
 from grading import extract_model_answer, is_correct
 from llm import Tracker, call_llm, check_ready
 from prompts import SOLVE_PROMPT
 
 # ── tuning knobs ─────────────────────────────────────────────────────────────
-SAMPLE_K = 5          # total solver samples per question (including the first)
-RISK_THRESHOLD = 0.4  # audit when risk >= this value; tune on dev.json only
+SAMPLE_K_INITIAL  = 3    # samples to draw first before checking risk
+SAMPLE_K_EXTRA    = 2    # additional samples if risk is borderline
+RISK_LOW          = 0.3  # below this → trust majority vote, no audit
+RISK_HIGH         = 0.5  # above this → audit immediately, skip extra samples
+# borderline zone: RISK_LOW <= risk <= RISK_HIGH → draw SAMPLE_K_EXTRA more, then re-check
+RISK_THRESHOLD    = 0.4  # audit threshold applied after the final sample set
 
 AUDIT_PROMPT = (
     "You are a strict math auditor. A student has attempted the following problem.\n\n"
@@ -64,8 +68,10 @@ class AuditResult:
     tag: str                 # from dataset: seeded_error / consistent_correct / always_wrong
 
     # auditor metadata
-    risk_score: float        # 0.0 = unanimous, 1.0 = maximally split
-    auditor_triggered: bool  # did we pay for a second call?
+    risk_score: float           # 0.0 = unanimous, 1.0 = maximally split
+    auditor_triggered: bool     # did we pay for a second call?
+    majority_answer: str | None # majority-vote answer BEFORE audit
+    majority_correct: bool      # was the pre-audit answer already correct?
     auditor_answer: str | None  # what the auditor said (None if not triggered)
 
     # cost metadata
@@ -74,6 +80,7 @@ class AuditResult:
     out_tokens: int
     latency_s: float
     usd: float
+    total_samples: int = 3   # actual number of solver samples used (3 or 5)
 
 
 # ── core logic ────────────────────────────────────────────────────────────────
@@ -111,16 +118,16 @@ def _compute_risk(answers: list[str | None]) -> tuple[str | None, float]:
 
 def _audit(tracker: Tracker, question: str, answer: str | None,
            run_id: str, q_id: str) -> str | None:
-    """Ask the auditor to verify (or correct) the given answer."""
+    """Ask the auditor (stronger model) to verify (or correct) the given answer."""
     answer_str = str(answer) if answer is not None else "unable to determine"
     response = call_llm(
         tracker,
-        model=SOLVER_MODEL,
+        model=AUDITOR_MODEL,       # stronger model than the solver
         messages=[{"role": "user", "content": AUDIT_PROMPT.format(
             question=question,
             answer=answer_str,
         )}],
-        temperature=0.0,   # auditor is deterministic
+        temperature=AUDITOR_TEMP,  # low but not zero, from config
         run_id=run_id,
         tag=f"audit_{q_id}",
     )
@@ -135,14 +142,26 @@ def run_one(item: dict, run_id: str) -> AuditResult:
     gold = str(item["gold"])
     tag = item.get("tag", "unknown")
 
-    # ── Step 1+2: SOLVE × SAMPLE_K ───────────────────────────────────────────
+    # ── Step 1+2: SOLVE × SAMPLE_K_INITIAL ───────────────────────────────────
     answers = []
-    for i in range(SAMPLE_K):
+    for i in range(SAMPLE_K_INITIAL):
         ans = _solve_once(tracker, question, run_id=run_id, tag_suffix=f"{q_id}_s{i}")
         answers.append(ans)
 
-    # ── Step 3: RISK ──────────────────────────────────────────────────────────
     modal_answer, risk_score = _compute_risk(answers)
+
+    # ── Step 3: DYNAMIC SAMPLING ──────────────────────────────────────────────
+    # High risk (> RISK_HIGH): clearly uncertain, skip extra samples, go straight to audit
+    # Low risk  (< RISK_LOW):  clearly confident, trust majority vote, stop here
+    # Borderline (RISK_LOW <= risk <= RISK_HIGH): draw more samples and recompute
+    if RISK_LOW <= risk_score <= RISK_HIGH:
+        for i in range(SAMPLE_K_EXTRA):
+            ans = _solve_once(tracker, question, run_id=run_id,
+                              tag_suffix=f"{q_id}_extra{i}")
+            answers.append(ans)
+        modal_answer, risk_score = _compute_risk(answers)
+
+    total_samples = len(answers)
 
     # ── Step 4: AUDIT (conditional) ───────────────────────────────────────────
     auditor_triggered = risk_score >= RISK_THRESHOLD
@@ -154,6 +173,7 @@ def run_one(item: dict, run_id: str) -> AuditResult:
     # ── Step 5: VERDICT ───────────────────────────────────────────────────────
     final_answer = auditor_answer if auditor_triggered else modal_answer
     correct = is_correct(final_answer, gold)
+    majority_correct = is_correct(modal_answer, gold)
 
     return AuditResult(
         question_id=q_id,
@@ -163,12 +183,15 @@ def run_one(item: dict, run_id: str) -> AuditResult:
         tag=tag,
         risk_score=risk_score,
         auditor_triggered=auditor_triggered,
+        majority_answer=modal_answer,
+        majority_correct=majority_correct,
         auditor_answer=auditor_answer,
         calls=tracker.calls,
         in_tokens=tracker.in_tokens,
         out_tokens=tracker.out_tokens,
         latency_s=tracker.latency_s,
         usd=tracker.usd,
+        total_samples=total_samples,
     )
 
 
@@ -234,33 +257,75 @@ def compute_metrics(results: list[AuditResult]) -> dict:
     else:
         precision = recall = 0.0
 
+    # pre-audit vs post-audit: only meaningful for questions the auditor touched
+    pre_post = {}
+    if audited:
+        for tag in ("seeded_error", "consistent_correct", "always_wrong"):
+            subset = [r for r in audited if r.tag == tag]
+            if not subset:
+                pre_post[tag] = None
+                continue
+            n = len(subset)
+            pre_acc  = sum(r.majority_correct for r in subset) / n
+            post_acc = sum(r.correct for r in subset) / n
+            improved = sum(not r.majority_correct and r.correct for r in subset)
+            worsened = sum(r.majority_correct and not r.correct for r in subset)
+            pre_post[tag] = {
+                "n_audited": n,
+                "pre_audit_acc":  round(pre_acc,  4),
+                "post_audit_acc": round(post_acc, 4),
+                "delta":          round(post_acc - pre_acc, 4),
+                "improved":       improved,   # wrong → right
+                "worsened":       worsened,   # right → wrong
+            }
+        # overall across all audited questions
+        n = len(audited)
+        pre_acc  = sum(r.majority_correct for r in audited) / n
+        post_acc = sum(r.correct for r in audited) / n
+        pre_post["overall_audited"] = {
+            "n_audited": n,
+            "pre_audit_acc":  round(pre_acc,  4),
+            "post_audit_acc": round(post_acc, 4),
+            "delta":          round(post_acc - pre_acc, 4),
+            "improved":       sum(not r.majority_correct and r.correct for r in audited),
+            "worsened":       sum(r.majority_correct and not r.correct for r in audited),
+        }
+
     return {
         "overall": _stats(results),
         "by_tag": by_tag,
+        "pre_vs_post_audit": pre_post,
         "auditor_targeting": {
             "precision_seeded": round(precision, 4),
             "recall_seeded": round(recall, 4),
         },
         "config": {
-            "sample_k": SAMPLE_K,
+            "sample_k_initial": SAMPLE_K_INITIAL,
+            "sample_k_extra": SAMPLE_K_EXTRA,
+            "risk_low": RISK_LOW,
+            "risk_high": RISK_HIGH,
             "risk_threshold": RISK_THRESHOLD,
-            "model": SOLVER_MODEL,
+            "solver_model": SOLVER_MODEL,
+            "auditor_model": AUDITOR_MODEL,
         },
     }
 
 
-def print_report(metrics: dict, run_id: str) -> None:
+def print_report(metrics: dict, run_id: str, results: list | None = None) -> None:
     """Print a human-readable summary to stdout."""
     ov = metrics["overall"]
+    cfg = metrics["config"]
     print(f"\n{'='*60}")
     print(f"  Adaptive Auditor — run_id: {run_id}")
-    print(f"  SAMPLE_K={metrics['config']['sample_k']}  "
-          f"RISK_THRESHOLD={metrics['config']['risk_threshold']}  "
-          f"model={metrics['config']['model']}")
+    print(f"  initial={cfg['sample_k_initial']}  extra={cfg['sample_k_extra']}  "
+          f"risk_low={cfg['risk_low']}  risk_high={cfg['risk_high']}  "
+          f"threshold={cfg['risk_threshold']}")
+    print(f"  solver={cfg['solver_model']}  auditor={cfg['auditor_model']}")
     print(f"{'='*60}")
+    avg_samples = sum(r.total_samples for r in results) / len(results) if results else 0
     print(f"  Overall    n={ov['n']:4d}  acc={ov['accuracy']:.1%}  "
           f"audit_rate={ov['audit_rate']:.1%}  "
-          f"avg_calls={ov['avg_calls']:.1f}  avg_risk={ov['avg_risk']:.3f}")
+          f"avg_samples={avg_samples:.1f}  avg_risk={ov['avg_risk']:.3f}")
     print(f"{'-'*60}")
     for tag, s in metrics["by_tag"].items():
         if s["n"] == 0:
@@ -273,7 +338,27 @@ def print_report(metrics: dict, run_id: str) -> None:
     print(f"  Auditor targeting seeded_error:  "
           f"precision={tgt['precision_seeded']:.1%}  "
           f"recall={tgt['recall_seeded']:.1%}")
-    print(f"{'='*60}\n")
+    print(f"{'='*60}")
+
+    # pre vs post audit table
+    pp = metrics.get("pre_vs_post_audit", {})
+    if pp:
+        print(f"\n  Pre-audit vs Post-audit  (audited questions only)")
+        print(f"  {'tag':<22}  {'n':>4}  {'before':>7}  {'after':>7}  {'delta':>7}  {'↑improved':>9}  {'↓worsened':>9}")
+        print(f"  {'-'*22}  {'-'*4}  {'-'*7}  {'-'*7}  {'-'*7}  {'-'*9}  {'-'*9}")
+        for tag in ("seeded_error", "consistent_correct", "always_wrong", "overall_audited"):
+            s = pp.get(tag)
+            if s is None:
+                continue
+            label = "overall (audited)" if tag == "overall_audited" else tag
+            delta_str = f"{s['delta']:+.1%}"
+            print(f"  {label:<22}  {s['n_audited']:>4}  "
+                  f"{s['pre_audit_acc']:>6.1%}  "
+                  f"{s['post_audit_acc']:>6.1%}  "
+                  f"{delta_str:>7}  "
+                  f"{s['improved']:>9}  "
+                  f"{s['worsened']:>9}")
+        print()
 
 
 # ── CLI entry point ───────────────────────────────────────────────────────────
@@ -299,14 +384,16 @@ def main():
         dataset = json.load(f)
 
     print(f"Loaded {len(dataset)} questions from {args.split}.json")
-    print(f"run_id={run_id!r}  SAMPLE_K={SAMPLE_K}  "
-          f"RISK_THRESHOLD={RISK_THRESHOLD}  model={SOLVER_MODEL}")
+    print(f"run_id={run_id!r}  initial={SAMPLE_K_INITIAL}  extra={SAMPLE_K_EXTRA}  "
+          f"risk_low={RISK_LOW}  risk_high={RISK_HIGH}  threshold={RISK_THRESHOLD}  "
+          f"solver={SOLVER_MODEL}  auditor={AUDITOR_MODEL}")
 
     check_ready(SOLVER_MODEL)
+    check_ready(AUDITOR_MODEL)
 
     results = run_eval(dataset, run_id=run_id, workers=args.workers)
     metrics = compute_metrics(results)
-    print_report(metrics, run_id)
+    print_report(metrics, run_id, results)
 
     # save metrics
     os.makedirs(RESULTS_DIR, exist_ok=True)
