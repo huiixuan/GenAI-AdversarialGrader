@@ -1,0 +1,41 @@
+{
+  "model": "qwen2.5:7b",
+  "overall": {
+    "n": 73,
+    "accuracy": 0.726,
+    "unparsed_rate": 0.0137,
+    "avg_calls": 1.0,
+    "avg_tokens": 341.5,
+    "avg_latency_s": 2.83
+  },
+  "by_tag": {
+    "seeded_error": {
+      "n": 33,
+      "accuracy": 0.6364,
+      "unparsed_rate": 0.0,
+      "avg_calls": 1.0,
+      "avg_tokens": 322.5,
+      "avg_latency_s": 2.29
+    },
+    "consistent_correct": {
+      "n": 23,
+      "accuracy": 0.8696,
+      "unparsed_rate": 0.0,
+      "avg_calls": 1.0,
+      "avg_tokens": 233.2,
+      "avg_latency_s": 2.19
+    },
+    "always_wrong": {
+      "n": 17,
+      "accuracy": 0.7059,
+      "unparsed_rate": 0.0588,
+      "avg_calls": 1.0,
+      "avg_tokens": 524.9,
+      "avg_latency_s": 4.72
+    }
+  },
+  "config": {
+    "temperature": 0.7,
+    "prompt": "SOLVE_PROMPT"
+  }
+}

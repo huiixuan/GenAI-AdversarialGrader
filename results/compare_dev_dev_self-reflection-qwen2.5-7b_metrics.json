@@ -1,0 +1,61 @@
+{
+  "model": "qwen2.5:7b",
+  "overall": {
+    "n": 73,
+    "initial_accuracy": 0.726,
+    "final_accuracy": 0.7397,
+    "initial_unparsed_rate": 0.0137,
+    "final_unparsed_rate": 0.0137,
+    "changed_rate": 0.0822,
+    "fixed": 3,
+    "broke": 2,
+    "avg_calls": 3.0,
+    "avg_tokens": 1530.3,
+    "avg_latency_s": 5.42
+  },
+  "by_tag": {
+    "seeded_error": {
+      "n": 33,
+      "initial_accuracy": 0.6364,
+      "final_accuracy": 0.697,
+      "initial_unparsed_rate": 0.0,
+      "final_unparsed_rate": 0.0,
+      "changed_rate": 0.0909,
+      "fixed": 2,
+      "broke": 0,
+      "avg_calls": 3.0,
+      "avg_tokens": 1489.4,
+      "avg_latency_s": 4.81
+    },
+    "consistent_correct": {
+      "n": 23,
+      "initial_accuracy": 0.8696,
+      "final_accuracy": 0.8696,
+      "initial_unparsed_rate": 0.0,
+      "final_unparsed_rate": 0.0,
+      "changed_rate": 0.087,
+      "fixed": 1,
+      "broke": 1,
+      "avg_calls": 3.0,
+      "avg_tokens": 1147.8,
+      "avg_latency_s": 4.14
+    },
+    "always_wrong": {
+      "n": 17,
+      "initial_accuracy": 0.7059,
+      "final_accuracy": 0.6471,
+      "initial_unparsed_rate": 0.0588,
+      "final_unparsed_rate": 0.0588,
+      "changed_rate": 0.0588,
+      "fixed": 0,
+      "broke": 1,
+      "avg_calls": 3.0,
+      "avg_tokens": 2127.2,
+      "avg_latency_s": 8.33
+    }
+  },
+  "config": {
+    "temperature": 0.7,
+    "version": "self-reflection-v1"
+  }
+}
