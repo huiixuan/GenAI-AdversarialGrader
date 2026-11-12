@@ -1,0 +1,41 @@
+{
+  "model": "llama3.1:8b",
+  "overall": {
+    "n": 170,
+    "accuracy": 0.5882,
+    "unparsed_rate": 0.0529,
+    "avg_calls": 1.0,
+    "avg_tokens": 322.9,
+    "avg_latency_s": 21.0
+  },
+  "by_tag": {
+    "seeded_error": {
+      "n": 72,
+      "accuracy": 0.5972,
+      "unparsed_rate": 0.0417,
+      "avg_calls": 1.0,
+      "avg_tokens": 300.3,
+      "avg_latency_s": 20.36
+    },
+    "consistent_correct": {
+      "n": 58,
+      "accuracy": 0.9138,
+      "unparsed_rate": 0.0172,
+      "avg_calls": 1.0,
+      "avg_tokens": 221.8,
+      "avg_latency_s": 20.36
+    },
+    "always_wrong": {
+      "n": 40,
+      "accuracy": 0.1,
+      "unparsed_rate": 0.125,
+      "avg_calls": 1.0,
+      "avg_tokens": 510.3,
+      "avg_latency_s": 23.08
+    }
+  },
+  "config": {
+    "temperature": 0.7,
+    "prompt": "SOLVE_PROMPT"
+  }
+}

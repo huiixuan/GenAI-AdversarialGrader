@@ -1,0 +1,83 @@
+{
+  "overall": {
+    "n": 170,
+    "accuracy": 0.6412,
+    "audit_rate": 0.5412,
+    "avg_calls": 4.75,
+    "avg_usd": 2.2e-05,
+    "avg_risk": 0.3541
+  },
+  "by_tag": {
+    "seeded_error": {
+      "n": 72,
+      "accuracy": 0.7083,
+      "audit_rate": 0.6528,
+      "avg_calls": 5.11,
+      "avg_usd": 2.3e-05,
+      "avg_risk": 0.3917
+    },
+    "consistent_correct": {
+      "n": 58,
+      "accuracy": 0.9655,
+      "audit_rate": 0.1724,
+      "avg_calls": 4.0,
+      "avg_usd": 4e-06,
+      "avg_risk": 0.1437
+    },
+    "always_wrong": {
+      "n": 40,
+      "accuracy": 0.05,
+      "audit_rate": 0.875,
+      "avg_calls": 5.2,
+      "avg_usd": 4.4e-05,
+      "avg_risk": 0.5917
+    }
+  },
+  "pre_vs_post_audit": {
+    "seeded_error": {
+      "n_audited": 47,
+      "pre_audit_acc": 0.5532,
+      "post_audit_acc": 0.5532,
+      "delta": 0.0,
+      "improved": 3,
+      "worsened": 3
+    },
+    "consistent_correct": {
+      "n_audited": 10,
+      "pre_audit_acc": 0.7,
+      "post_audit_acc": 0.8,
+      "delta": 0.1,
+      "improved": 1,
+      "worsened": 0
+    },
+    "always_wrong": {
+      "n_audited": 35,
+      "pre_audit_acc": 0.0571,
+      "post_audit_acc": 0.0571,
+      "delta": 0.0,
+      "improved": 1,
+      "worsened": 1
+    },
+    "overall_audited": {
+      "n_audited": 92,
+      "pre_audit_acc": 0.3804,
+      "post_audit_acc": 0.3913,
+      "delta": 0.0109,
+      "improved": 5,
+      "worsened": 4
+    }
+  },
+  "auditor_targeting": {
+    "precision_seeded": 0.5109,
+    "recall_seeded": 0.6528
+  },
+  "config": {
+    "sample_k_initial": 3,
+    "sample_k_extra": 2,
+    "risk_low": 0.3,
+    "risk_high": 0.5,
+    "risk_threshold": 0.4,
+    "solver_model": "llama3.2:3b",
+    "auditor_model": "llama3.1:8b"
+  }
+}

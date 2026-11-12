@@ -21,7 +21,8 @@ from dataclasses import asdict
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
-from config import DATA_DIR, RESULTS_DIR, SEED, SOLVER_MODEL, SOLVER_TEMP, WORKERS
+from config import (DATA_DIR, RESULTS_DIR, SEED, SOLVER_MODEL, SOLVER_TEMP, WORKERS,
+                    shared_run_id)
 from grading import extract_model_answer
 from llm import Tracker, call_llm, check_ready
 from prompts import SELF_CRITIQUE_PROMPT, SELF_REVISE_PROMPT, SOLVE_PROMPT
@@ -263,8 +264,8 @@ def main():
                                formatter_class=argparse.RawDescriptionHelpFormatter)
   ap.add_argument("--split", choices=["dev", "test"], default="dev")
   ap.add_argument("--run-id", default=None,
-                  help="cache and result namespace; defaults to self_reflection_<split>. "
-                       "Use the baseline's run-id to reuse its first answer.")
+                  help="cache and result namespace; default shared_<split>, "
+                       "which reuses the baseline solve call")
   ap.add_argument("--models", default=",".join(default_models()),
                   help="comma-separated Ollama models (default: solver, auditor, qwen2.5:7b)")
   ap.add_argument("--limit", type=int, default=None,
@@ -275,7 +276,7 @@ def main():
                   help="print saved results for --models, no model calls")
   args = ap.parse_args()
 
-  run_id = args.run_id or f"self_reflection_{args.split}"
+  run_id = args.run_id or shared_run_id(args.split)
   models = parse_models(args.models)
   if args.report:
     report_saved(run_id, args.split, models)

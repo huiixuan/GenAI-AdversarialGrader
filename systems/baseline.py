@@ -25,7 +25,7 @@ from dataclasses import asdict
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from config import (AUDITOR_MODEL, DATA_DIR, RESULTS_DIR, SEED, SOLVER_MODEL,
-                    SOLVER_TEMP, WORKERS)
+                    SOLVER_TEMP, WORKERS, shared_run_id)
 from llm import Tracker, check_ready
 from prompts import SOLVE_PROMPT
 from systems.common import finish, solve_once
@@ -235,7 +235,8 @@ def main():
                                formatter_class=argparse.RawDescriptionHelpFormatter)
   ap.add_argument("--split", choices=["dev", "test"], default="dev")
   ap.add_argument("--run-id", default=None,
-                  help="cache and result namespace; defaults to baseline_<split>")
+                  help="cache and result namespace; default shared_<split>, "
+                       "so the other systems replay this solve call")
   ap.add_argument("--models", default=",".join(default_models()),
                   help="comma-separated Ollama models (default: solver, auditor, qwen2.5:7b)")
   ap.add_argument("--limit", type=int, default=None,
@@ -246,7 +247,7 @@ def main():
                   help="print saved results for --models, no model calls")
   args = ap.parse_args()
 
-  run_id = args.run_id or f"baseline_{args.split}"
+  run_id = args.run_id or shared_run_id(args.split)
   models = parse_models(args.models)
   if args.report:
     report_saved(run_id, args.split, models)

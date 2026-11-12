@@ -1,0 +1,83 @@
+{
+  "overall": {
+    "n": 72,
+    "accuracy": 0.6528,
+    "audit_rate": 0.625,
+    "avg_calls": 5.0,
+    "avg_usd": 2.4e-05,
+    "avg_risk": 0.3908
+  },
+  "by_tag": {
+    "seeded_error": {
+      "n": 32,
+      "accuracy": 0.7188,
+      "audit_rate": 0.625,
+      "avg_calls": 5.12,
+      "avg_usd": 1.9e-05,
+      "avg_risk": 0.3917
+    },
+    "consistent_correct": {
+      "n": 23,
+      "accuracy": 0.9565,
+      "audit_rate": 0.3478,
+      "avg_calls": 4.57,
+      "avg_usd": 8e-06,
+      "avg_risk": 0.1971
+    },
+    "always_wrong": {
+      "n": 17,
+      "accuracy": 0.1176,
+      "audit_rate": 1.0,
+      "avg_calls": 5.35,
+      "avg_usd": 5.4e-05,
+      "avg_risk": 0.651
+    }
+  },
+  "pre_vs_post_audit": {
+    "seeded_error": {
+      "n_audited": 20,
+      "pre_audit_acc": 0.65,
+      "post_audit_acc": 0.6,
+      "delta": -0.05,
+      "improved": 1,
+      "worsened": 2
+    },
+    "consistent_correct": {
+      "n_audited": 8,
+      "pre_audit_acc": 0.75,
+      "post_audit_acc": 0.875,
+      "delta": 0.125,
+      "improved": 1,
+      "worsened": 0
+    },
+    "always_wrong": {
+      "n_audited": 17,
+      "pre_audit_acc": 0.1765,
+      "post_audit_acc": 0.1176,
+      "delta": -0.0588,
+      "improved": 0,
+      "worsened": 1
+    },
+    "overall_audited": {
+      "n_audited": 45,
+      "pre_audit_acc": 0.4889,
+      "post_audit_acc": 0.4667,
+      "delta": -0.0222,
+      "improved": 2,
+      "worsened": 3
+    }
+  },
+  "auditor_targeting": {
+    "precision_seeded": 0.4444,
+    "recall_seeded": 0.625
+  },
+  "config": {
+    "sample_k_initial": 3,
+    "sample_k_extra": 2,
+    "risk_low": 0.3,
+    "risk_high": 0.5,
+    "risk_threshold": 0.4,
+    "solver_model": "llama3.2:3b",
+    "auditor_model": "llama3.1:8b"
+  }
+}

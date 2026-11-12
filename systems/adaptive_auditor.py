@@ -33,10 +33,12 @@ from dataclasses import asdict, dataclass
 # ── project root on path ──────────────────────────────────────────────────────
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
-from config import AUDITOR_MODEL, AUDITOR_TEMP, RESULTS_DIR, SOLVER_MODEL, SOLVER_TEMP, WORKERS
+from config import (AUDITOR_MODEL, AUDITOR_TEMP, RESULTS_DIR, SOLVER_MODEL, SOLVER_TEMP,
+                    WORKERS, shared_run_id)
 from grading import extract_model_answer, is_correct
 from llm import Tracker, call_llm, check_ready
 from prompts import SOLVE_PROMPT
+from systems.common import solve_once
 
 # ── tuning knobs ─────────────────────────────────────────────────────────────
 SAMPLE_K_INITIAL  = 3    # samples to draw first before checking risk
@@ -167,9 +169,13 @@ def run_one(item: dict, run_id: str) -> AuditResult:
     gold = str(item["gold"])
     tag = item.get("tag", "unknown")
 
-    # ── Step 1+2: SOLVE × SAMPLE_K_INITIAL ───────────────────────────────────
+    # Sample 0 is the shared first answer (tag "solve"): the same cache entry
+    # baseline, self-reflection, and adversarial use when run_id matches.
+    # Later samples keep their own tags so the risk vote is not three copies.
     answers = []
-    for i in range(SAMPLE_K_INITIAL):
+    _text, first = solve_once(item, tracker, run_id)
+    answers.append(first)
+    for i in range(1, SAMPLE_K_INITIAL):
         ans = _solve_once(tracker, question, run_id=run_id, tag_suffix=f"{q_id}_s{i}")
         answers.append(ans)
 
@@ -394,13 +400,13 @@ def main():
     parser.add_argument("--split", choices=["dev", "test"], default="dev",
                         help="Which split to evaluate (default: dev)")
     parser.add_argument("--run-id", default=None,
-                        help="Cache namespace; defaults to 'adaptive_<split>'")
+                        help="Cache namespace; default shared_<split>, same first answer as the other systems")
     parser.add_argument("--workers", type=int, default=WORKERS)
     parser.add_argument("--out", default=None,
                         help="Save per-question results to this JSON file")
     args = parser.parse_args()
 
-    run_id = args.run_id or f"adaptive_{args.split}"
+    run_id = args.run_id or shared_run_id(args.split)
 
     data_path = os.path.join(
         os.path.dirname(__file__), "..", "data", f"{args.split}.json"

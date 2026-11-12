@@ -15,6 +15,8 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from config import SOLVER_MODEL, SOLVER_TEMP
 from prompts import SELF_CRITIQUE_PROMPT, SELF_REVISE_PROMPT, SOLVE_PROMPT
+import systems.adaptive_auditor as adaptive
+import systems.adversarial as adversarial
 import systems.baseline as baseline
 import systems.self_reflection as reflection
 
@@ -44,7 +46,7 @@ class SimulatedModel:
     tracker.latency_s += 0.05
     tracker.log.append({"tag": tag, "model": model})
     question = messages[0]["content"]
-    if tag == "solve":
+    if tag == "solve" or tag.startswith("solve_"):
       if "FAILCALL" in question:
         raise RuntimeError("model down")
       if "UNPARSED" in question:
@@ -54,6 +56,8 @@ class SimulatedModel:
       if "WRONG" in question:
         return "ANSWER: 4"
       return "ANSWER: 10"
+    if tag.startswith("audit"):
+      return "not json"
     if tag == "self-critique":
       if "EMPTY" in question:
         return "   "
@@ -96,6 +100,8 @@ class SimulatedEvalTest(unittest.TestCase):
     self.patches = [
         patch("systems.common.call_llm", self.model),
         patch("systems.self_reflection.call_llm", self.model),
+        patch("systems.auditor.call_llm", self.model),
+        patch("systems.adaptive_auditor.call_llm", self.model),
         patch("systems.baseline.check_ready"),
         patch("systems.self_reflection.check_ready"),
         patch("systems.baseline.DATA_DIR", self.data),
@@ -184,6 +190,26 @@ class SimulatedEvalTest(unittest.TestCase):
     critique_key = cache_key(critique["model"], critique["messages"], critique["temperature"],
                              critique["run_id"], critique["tag"], critique["system"])
     self.assertNotEqual(critique_key, keys[0])
+
+  def test_all_four_systems_share_one_solve_cache_key(self):
+    item = sample_items()[0]
+    run_id = "shared_dev"
+    self.model.calls.clear()
+    baseline.run_baseline(item, run_id)
+    reflection.run_self_reflection(item, run_id)
+    adversarial.run_adversarial(item, run_id)
+    adaptive.run_one(item, run_id)
+    solve_calls = [c for c in self.model.calls if c["tag"] == "solve"]
+    self.assertEqual(len(solve_calls), 4)
+    keys = [cache_key(c["model"], c["messages"], c["temperature"], c["run_id"], c["tag"], c["system"])
+            for c in solve_calls]
+    self.assertEqual(len(set(keys)), 1)
+    self.assertTrue(all(c["model"] == SOLVER_MODEL and c["run_id"] == run_id for c in solve_calls))
+    extra = [c for c in self.model.calls if c["tag"].startswith("solve_")]
+    self.assertEqual(len(extra), 2)
+    extra_keys = [cache_key(c["model"], c["messages"], c["temperature"], c["run_id"], c["tag"], c["system"])
+                  for c in extra]
+    self.assertTrue(all(k != keys[0] for k in extra_keys))
 
   def test_baseline_eval_grades_resumes_and_refuses_a_changed_setup(self):
     self._run("baseline", ["--split", "dev", "--run-id", "sim", "--models", "llama3.2:3b,qwen2.5:7b"])

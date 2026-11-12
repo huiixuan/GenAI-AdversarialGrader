@@ -13,7 +13,12 @@ OLLAMA_TIMEOUT = 300
 NUM_CTX = 8192
 
 SOLVER_MODEL = "llama3.2:3b"
-SOLVER_TEMP = 0.7 
+SOLVER_TEMP = 0.7
+
+
+def shared_run_id(split):
+  """Cache namespace for one split. Every system replays the same first solve."""
+  return f"shared_{split}" 
 MAX_TOKENS = 1024
 WORKERS = 8
 

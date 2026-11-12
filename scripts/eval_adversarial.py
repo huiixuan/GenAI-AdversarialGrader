@@ -32,7 +32,7 @@ from collections import Counter, defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import asdict
 
-from config import DATA_DIR, RESULTS_DIR, SEED, SOLVER_MODEL, SOLVER_TEMP
+from config import DATA_DIR, RESULTS_DIR, SEED, SOLVER_MODEL, SOLVER_TEMP, shared_run_id
 from grading import is_correct
 from llm import check_ready
 from prompts import AUDITOR_CRITIQUE_PROMPT, REVISE_PROMPT, SOLVE_PROMPT, build_auditor_system
@@ -443,7 +443,8 @@ def report(paths):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--run-id", default="ev1")
+    ap.add_argument("--run-id", default=None,
+                    help="cache namespace; default shared_<split>, same first answer as the other systems")
     ap.add_argument("--split", default="dev", choices=["dev", "test"])
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--tag", default=None, choices=["seeded_error", "consistent_correct", "always_wrong"])
@@ -457,6 +458,8 @@ def main():
     ap.add_argument("--no-tools", action="store_true")
     ap.add_argument("--style", choices=["adversarial", "neutral"], default="adversarial")
     a = ap.parse_args()
+    if not a.run_id:
+        a.run_id = shared_run_id(a.split)
     if a.inspect:
         paths = sorted(glob.glob(f"{RESULTS_DIR}/{a.run_id}_{a.split}_adversarial-*.jsonl"))
         return inspect_ids(paths, set(a.inspect)) if paths else sys.exit("no result files found")
