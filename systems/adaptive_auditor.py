@@ -57,9 +57,8 @@ AUDIT_PROMPT_BLIND_SOLVE = (
 AUDIT_PROMPT_COMPARE = (
     "You solved the problem and got: {auditor_answer}\n"
     "The solver's answer is: {solver_answer}\n\n"
-    "If your answers agree, return your answer.\n"
-    "If they disagree, re-examine both carefully and return whichever answer "
-    "you are more confident is correct.\n\n"
+    "Only override the solver if you are highly confident it is wrong. "
+    "If there is any doubt, return the solver's answer.\n\n"
     "Finish with a single line in exactly this form, with nothing after it:\n"
     "ANSWER: <final answer as a number or simple fraction, no units>"
 )

@@ -130,32 +130,6 @@ System 1         System 2       System 3      System 4
 Final Answer   Final Answer   Final Answer   Final Answer
 ```
 
-**System 4 — Adaptive Auditor routing detail:**
-
-```
-Solver × 3  →  risk = 1 − (modal_count / total_samples)
-                   │
-        ┌──────────┼──────────┐
-      < 0.3     0.3–0.5     > 0.5
-     (low)   (borderline)  (high)
-        │          │          │
-     Trust    Solver × 2    Audit
-    majority  recompute    immediately
-      vote      risk
-        │          │          │
-        └──────────┴──────────┘
-                   │
-            risk ≥ 0.4?
-            │         │
-           Yes        No
-            │         │
-         Auditor    Majority
-        (8b, ×1)     vote
-            └────┬────┘
-                 ▼
-           Final Answer
-```
-
 ---
 
 ## Running Each System
