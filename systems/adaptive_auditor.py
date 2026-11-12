@@ -46,16 +46,22 @@ RISK_HIGH         = 0.5  # above this → audit immediately, skip extra samples
 # borderline zone: RISK_LOW <= risk <= RISK_HIGH → draw SAMPLE_K_EXTRA more, then re-check
 RISK_THRESHOLD    = 0.4  # audit threshold applied after the final sample set
 
-AUDIT_PROMPT = (
-    "You are a strict math auditor. A student has attempted the following problem.\n\n"
+AUDIT_PROMPT_BLIND_SOLVE = (
+    "You are an independent math auditor. Solve the following problem yourself "
+    "without any bias. Show your key steps concisely.\n\n"
     "Problem:\n{question}\n\n"
-    "Student's answer: {answer}\n\n"
-    "Check the answer carefully:\n"
-    "  1. Identify the key steps needed to solve the problem.\n"
-    "  2. State whether the student's answer is correct or incorrect.\n"
-    "  3. If incorrect, work out the right answer.\n\n"
     "Finish with a single line in exactly this form, with nothing after it:\n"
-    "ANSWER: <correct final answer as a number or simple fraction, no units>"
+    "ANSWER: <your answer as a number or simple fraction, no units>"
+)
+
+AUDIT_PROMPT_COMPARE = (
+    "You solved the problem and got: {auditor_answer}\n"
+    "The solver's answer is: {solver_answer}\n\n"
+    "If your answers agree, return your answer.\n"
+    "If they disagree, re-examine both carefully and return whichever answer "
+    "you are more confident is correct.\n\n"
+    "Finish with a single line in exactly this form, with nothing after it:\n"
+    "ANSWER: <final answer as a number or simple fraction, no units>"
 )
 
 # ── result dataclass ──────────────────────────────────────────────────────────
@@ -118,20 +124,40 @@ def _compute_risk(answers: list[str | None]) -> tuple[str | None, float]:
 
 def _audit(tracker: Tracker, question: str, answer: str | None,
            run_id: str, q_id: str) -> str | None:
-    """Ask the auditor (stronger model) to verify (or correct) the given answer."""
-    answer_str = str(answer) if answer is not None else "unable to determine"
-    response = call_llm(
+    """Blind-solve audit (Option A):
+    Step 1 — auditor solves independently without seeing the solver's answer.
+    Step 2 — auditor sees the solver's answer and picks the more confident one.
+    This avoids anchoring the auditor to the solver's (possibly wrong) answer.
+    """
+    # Step 1: blind solve
+    blind_response = call_llm(
         tracker,
-        model=AUDITOR_MODEL,       # stronger model than the solver
-        messages=[{"role": "user", "content": AUDIT_PROMPT.format(
+        model=AUDITOR_MODEL,
+        messages=[{"role": "user", "content": AUDIT_PROMPT_BLIND_SOLVE.format(
             question=question,
-            answer=answer_str,
         )}],
-        temperature=AUDITOR_TEMP,  # low but not zero, from config
+        temperature=AUDITOR_TEMP,
         run_id=run_id,
-        tag=f"audit_{q_id}",
+        tag=f"audit_blind_{q_id}",
     )
-    return extract_model_answer(response)
+    auditor_answer = extract_model_answer(blind_response)
+
+    # Step 2: compare with solver's answer and pick the better one
+    solver_str  = str(answer) if answer is not None else "unable to determine"
+    auditor_str = str(auditor_answer) if auditor_answer is not None else "unable to determine"
+
+    compare_response = call_llm(
+        tracker,
+        model=AUDITOR_MODEL,
+        messages=[{"role": "user", "content": AUDIT_PROMPT_COMPARE.format(
+            auditor_answer=auditor_str,
+            solver_answer=solver_str,
+        )}],
+        temperature=0.0,   # deterministic for the final pick
+        run_id=run_id,
+        tag=f"audit_compare_{q_id}",
+    )
+    return extract_model_answer(compare_response)
 
 
 def run_one(item: dict, run_id: str) -> AuditResult:
